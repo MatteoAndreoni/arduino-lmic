@@ -141,7 +141,7 @@
 // own LoRaWAN library. It also uses lookup tables, but smaller
 // byte-oriented ones, making it use a lot less flash space (but it is
 // also about twice as slow as the original).
-// #define USE_IDEETRON_AES
+#define USE_IDEETRON_AES
 
 #if ! (defined(USE_ORIGINAL_AES) || defined(USE_IDEETRON_AES))
 # define USE_IDEETRON_AES
@@ -149,6 +149,13 @@
 
 #if defined(USE_ORIGINAL_AES) && defined(USE_IDEETRON_AES)
 # error "You may define at most one of USE_ORIGINAL_AES and USE_IDEETRON_AES"
+#endif
+
+// ENABLE_CLASS_C
+// enable support for class C 
+// schedule an UP frame with ACK when a DN frame require confirmation
+#if !defined(ENABLE_CLASS_C)
+# define ENABLE_CLASS_C 0
 #endif
 
 // LMIC_DISABLE_DR_LEGACY
