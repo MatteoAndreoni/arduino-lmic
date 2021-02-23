@@ -153,6 +153,7 @@ What certainly works:
 - Over-the-air activation (OTAA / joining).
 - Receiving downlink packets in the RX1 and RX2 windows.
 - MAC command processing.
+- Class C operation
 
 What has not been tested:
 
